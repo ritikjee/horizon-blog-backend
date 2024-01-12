@@ -7,8 +7,6 @@ interface userInterface {
   bio: String;
   profileImage: String;
   coverImage: String;
-  token: String;
-  _verified: Boolean;
   Blogs: [
     {
       type: Schema.Types.ObjectId;
