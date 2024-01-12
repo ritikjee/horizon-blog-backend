@@ -68,8 +68,6 @@ const userSchema = new Schema<userInterface>(
     name: { type: String, required: true },
     userName: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
-    token: { type: String, required: true },
-    _verified: { type: Boolean, required: true, default: false },
     profileImage: {
       type: String,
       required: true,
