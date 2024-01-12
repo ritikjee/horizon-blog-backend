@@ -4,8 +4,8 @@
   "description": "This is a full stack mern project for creating, reading and uploading blogs",
   "scripts": {
     "dev": "nodemon",
-    "build": "tsc",
-    "start": "tsc && node dist/server.js"
+    "build": "npx tsc",
+    "start": "node dist/server.js"
   },
   "author": "Ritik Jha",
   "license": "ISC",
