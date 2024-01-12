@@ -1,0 +1,23 @@
+{
+  "name": "mern-blog-project",
+  "version": "1.0.0",
+  "description": "This is a full stack mern project for creating, reading and uploading blogs",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "tsc && node dist/server.js"
+  },
+  "author": "Ritik Jha",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.4",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  }
+}
