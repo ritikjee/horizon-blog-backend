@@ -2,9 +2,10 @@
   "name": "mern-blog-project",
   "version": "1.0.0",
   "description": "This is a full stack mern project for creating, reading and uploading blogs",
+  "entry point": "dist/server.js",
   "scripts": {
     "dev": "nodemon",
-    "build": "npx tsc",
+    "build": "npm i && npx tsc",
     "start": "node dist/server.js"
   },
   "author": "Ritik Jha",
