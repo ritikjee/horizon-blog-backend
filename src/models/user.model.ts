@@ -5,6 +5,7 @@ interface userInterface {
   userName: String;
   email: String;
   bio: String;
+  password: String;
   profileImage: String;
   coverImage: String;
   Blogs: [
@@ -68,6 +69,7 @@ const userSchema = new Schema<userInterface>(
     name: { type: String, required: true },
     userName: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
     profileImage: {
       type: String,
       required: true,
