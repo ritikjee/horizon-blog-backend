@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, Types, model } from "mongoose";
 
 interface topicInterface {
   name: String;
@@ -6,13 +6,13 @@ interface topicInterface {
   coverImage: String;
   blogs: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Blog";
     }
   ];
   followers: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "User";
     }
   ];

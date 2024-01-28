@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, Types, model } from "mongoose";
 
 interface userInterface {
   name: String;
@@ -10,55 +10,55 @@ interface userInterface {
   coverImage: String;
   Blogs: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Blog";
     }
   ];
   Followers: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "User";
     }
   ];
   Following: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "User";
     }
   ];
   comments: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Comment";
     }
   ];
   likedBlogs: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Blog";
     }
   ];
   dislikedBlogs: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Blog";
     }
   ];
   likedComments: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Comment";
     }
   ];
   dislikedComments: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Comment";
     }
   ];
   topicsFollowed: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Topic";
     }
   ];

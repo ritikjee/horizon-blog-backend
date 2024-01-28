@@ -1,11 +1,15 @@
-import { model, Schema } from "mongoose";
+import { model, Schema, Types } from "mongoose";
 
 interface commentInterface {
   body: String;
-  rating: Number;
+
   user: {
-    type: Schema.Types.ObjectId;
+    type: Types.ObjectId;
     ref: "User";
+  };
+  blog: {
+    type: Types.ObjectId;
+    ref: "Blog";
   };
 }
 
@@ -15,13 +19,13 @@ const commentSchema = new Schema<commentInterface>(
       type: String,
       required: true,
     },
-    rating: {
-      type: Number,
-      required: true,
-    },
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",
+    },
+    blog: {
+      type: Schema.Types.ObjectId,
+      ref: "Blog",
     },
   },
   { timestamps: true }

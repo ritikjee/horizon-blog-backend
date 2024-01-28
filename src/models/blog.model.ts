@@ -1,38 +1,38 @@
-import { Schema, model } from "mongoose";
+import { Schema, Types, model } from "mongoose";
 
 interface blogInterface {
   title: String;
   slug: String;
-  description: String;
   body: String;
   coverImage: String;
+  featured: Boolean;
   author: {
-    type: Schema.Types.ObjectId;
+    type: Types.ObjectId;
     ref: "User";
   };
   comments: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Comment";
     }
   ];
 
   likes: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "User";
     }
   ];
   dislikes: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "User";
     }
   ];
 
   topics: [
     {
-      type: Schema.Types.ObjectId;
+      type: Types.ObjectId;
       ref: "Topic";
     }
   ];
@@ -47,12 +47,8 @@ const blogSchema = new Schema<blogInterface>(
     slug: {
       type: String,
       required: true,
-      unique: true,
     },
 
-    description: {
-      type: String,
-    },
     body: {
       type: String,
       required: true,
@@ -64,6 +60,11 @@ const blogSchema = new Schema<blogInterface>(
     author: {
       type: Schema.Types.ObjectId,
       ref: "User",
+      required: true,
+    },
+    featured: {
+      type: Boolean,
+      default: false,
     },
     comments: [
       {

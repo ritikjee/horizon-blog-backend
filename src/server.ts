@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 import connectDB from "./config/connectDB";
 import cors from "cors";
 import authroute from "./routers/auth.route";
+import blogroute from "./routers/blog.route";
+import commentRouter from "./routers/comment.route";
+import profileRouter from "./routers/profile.route";
 
 dotenv.config();
 
@@ -16,5 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/auth", authroute);
+app.use("/blog", blogroute);
+app.use("/comment", commentRouter);
+app.use("/profile", profileRouter);
 
 app.listen(Port, () => console.log(`listening on port ${Port}`));
